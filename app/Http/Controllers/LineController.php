@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Line;
+
 
 class LineController extends Controller
 {
@@ -31,8 +33,8 @@ class LineController extends Controller
         $data = json_decode($body, true);
         foreach ($data['events'] as $event)
         {
-
-            $userMessage = $event['message']['text'];
+            Line::saveChat($event);
+            //$userMessage = $event['message']['text'];
             // if(strtolower($userMessage) == 'halo')
             // {
             // 	$message = "Halo juga";
