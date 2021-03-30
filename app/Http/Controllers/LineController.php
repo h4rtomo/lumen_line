@@ -6,6 +6,7 @@ use App\Line;
 use App\LineChat;
 use Carbon\Carbon;
 use App\LineChatHastag;
+use Illuminate\Http\Request;
 
 
 class LineController extends Controller
