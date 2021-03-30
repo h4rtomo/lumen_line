@@ -37,6 +37,18 @@ class Line extends Model
         }
     }
 
+    public static function saveAnalytic($data){
+        $analytic = new LineAnalytic();
+        
+        $analytic->hastag = $data['hastag'];
+        $analytic->total_chat = $data['total_chat'];
+        $analytic->total_user = $data['total_user'];
+        $analytic->total_group = $data['total_group'];
+        $analytic->count_chat_7day = $data['count_chat_7day'];
+        $analytic->total_user_7day = $data['total_user_7day'];
+        $analytic->save();
+    }
+
     public static function getHastag($string){
         preg_match_all("/(#\w+)/", $string, $matches);
         $hastag = array();

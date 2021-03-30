@@ -16,3 +16,6 @@ $router->get('/', function () use ($router) {
 });
 
 $router->post('/', "LineController@getChat");
+
+$router->get('/list_hastag', "LineController@listHastag");
+$router->get('/analytics_by_hastag', "LineController@getAnalitycsByHastag");
