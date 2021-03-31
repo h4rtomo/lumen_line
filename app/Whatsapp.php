@@ -9,7 +9,7 @@ class Whatsapp extends Model
         $data = json_decode($data, true);
         if(isset($data['message']) && isset($data['message']['conversation'])){
             $chat = new WhatsappChat();
-            $chat->text_chat = $$data['message']['conversation'];
+            $chat->text_chat = $data['message']['conversation'];
             $chat->chat_id = isset($data['key']['id']) ? $data['key']['id'] : "";
             $chat->group_id = isset($data['key']['remoteJid']) ? $data['key']['remoteJid'] : "";
             $chat->user_id = isset($data['participant']) ? $data['participant'] : "";
