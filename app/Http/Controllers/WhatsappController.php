@@ -14,6 +14,9 @@ class WhatsappController extends Controller
 
     public function getChat(Request $request){
         $data = $request->get('chat', nul);
+        $body 	   = file_get_contents('php://input');
+        $fp = fopen("/var/www/html/linebot/storage/logs/chat_wa.log", "a");
+        fwrite($fp, "body : " . $body . "\n");
         if($data != null){
             Whatsapp::saveChat($data);
         }
