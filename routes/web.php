@@ -19,3 +19,9 @@ $router->post('/', "LineController@getChat");
 
 $router->get('/list_hastag', "LineController@listHastag");
 $router->get('/analytics_by_hastag', "LineController@getAnalitycsByHastag");
+
+
+$router->post('/wa', "WhatsappController@getChat");
+
+$router->get('/wa/list_hastag', "WhatsappController@listHastag");
+$router->get('/wa/analytics_by_hastag', "WhatsappController@getAnalitycsByHastag");
